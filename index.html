@@ -44,6 +44,7 @@
             d = g && "system" === a ? window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light" : a;
           k(d)
         } catch (a) {}
+        if(!d&&g){let m=window.matchMedia("(prefers-color-scheme: dark)"),u=()=>{try{let p=localStorage.getItem(b)||c;if(p!=="system")return;k(m.matches?"dark":"light")}catch(_){}};m.addEventListener?m.addEventListener("change",u):m.addListener&&m.addListener(u)}
       })("class", "theme", "system", null, ["light", "dark"], null, true, true)
     </script>
 
