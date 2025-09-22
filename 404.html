@@ -22,6 +22,10 @@
       .groote-font {
         font-family: 'Groote', sans-serif;
       }
+      
+      html, body { height: 100%; margin: 0; }
+      .min-h-dvh { min-height: 100vh; }
+      @supports (height: 100dvh) { .min-h-dvh { min-height: 100dvh; } }
     </style>
     
     <title>Page Not Found - Subash</title>
@@ -64,7 +68,7 @@
 
 
     <!--MAIN-->
-    <div class="min-h-screen flex flex-col justify-between">
+    <div class="min-h-dvh flex flex-col">
       <header class="pt-8">
         <h1 class="text-4xl md:text-5xl mb-1 font-medium leading-13 groote-font">subashbaniyaa</h1>
         <p class="text-copy my-2">I am a web developer, designer, and lifelong learner.</p>
@@ -83,7 +87,7 @@
         </div>
       </main>
 
-      <nav class="pb-4">
+      <nav class="mt-auto pb-4">
         <ul class="space-y-2">
           <li class="p-0">
             <a class="text-copy" href="#">not found</a>
