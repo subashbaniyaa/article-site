@@ -60,21 +60,29 @@
       }
       
       .download-link {
-        color: var(--text-heading);
-        text-decoration: none;
+        color: var(--text-nav);
+        text-decoration: underline;
         font-size: 0.875rem;
-        font-weight: 500;
-        padding: 0.5rem 1.25rem;
-        border: 1px solid var(--text-heading);
-        border-radius: 0.25rem;
-        transition: all 0.2s ease;
-        display: inline-block;
-        letter-spacing: 0.025em;
+        font-weight: normal;
+        transition: color 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
       }
       
       .download-link:hover {
-        background: var(--text-heading);
-        color: var(--bg);
+        color: var(--text-nav-hover);
+      }
+      
+      .font-section {
+        border-bottom: 1px solid var(--border, #e5e5e5);
+        padding-bottom: 3rem;
+        margin-bottom: 3rem;
+      }
+      
+      .font-section:last-of-type {
+        border-bottom: none;
+        margin-bottom: 2rem;
       }
       
       .font-preview-text {
@@ -155,17 +163,24 @@
 
         <br>
         
-        <h2 class="text-2xl md:text-3xl mb-4 mt-12 font-medium groote-font">Groote</h2>
-        <div class="flex justify-between items-center mb-4">
-          <p class="text-copy my-0">Elegant serif typeface with classical proportions.</p>
-          <a href="/fonts/Groote-Regular.otf" download class="download-link">download</a>
-        </div>
-        <div class="text-copy groote-font mb-8">
-          <div class="font-preview-text">
-            <div class="font-preview-large">The quick brown fox</div>
-            <div class="font-preview-medium">jumps over the lazy dog</div>
-            <div class="font-preview-small">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789 !@#$%^&*()</div>
+        <div class="font-section">
+          <h2 class="text-3xl md:text-4xl mb-6 mt-12 font-medium groote-font">Groote</h2>
+          <p class="text-copy mb-6 groote-font">Elegant serif typeface with classical proportions.</p>
+          <div class="text-copy groote-font mb-6">
+            <div class="font-preview-text">
+              <div class="font-preview-large">The quick brown fox</div>
+              <div class="font-preview-medium">jumps over the lazy dog</div>
+              <div class="font-preview-small">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789 !@#$%^&*()</div>
+            </div>
           </div>
+          <a href="/fonts/Groote-Regular.otf" download class="download-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7,10 12,15 17,10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            download font
+          </a>
         </div>
 
         <h2 class="text-2xl md:text-3xl mb-4 mt-12 font-medium athemi-font">Athemi</h2>
