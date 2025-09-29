@@ -60,19 +60,15 @@
       }
       
       .download-link {
-        background: var(--text-heading);
-        color: var(--bg);
-        text-decoration: none;
-        padding: 0.5rem 1rem;
-        border-radius: 0.375rem;
+        color: var(--text-nav);
+        text-decoration: underline;
         font-size: 0.875rem;
-        font-weight: 500;
-        transition: opacity 0.2s ease;
-        display: inline-block;
+        font-weight: normal;
+        transition: color 0.2s ease;
       }
       
       .download-link:hover {
-        opacity: 0.8;
+        color: var(--text-nav-hover);
       }
       
       .font-preview-text {
@@ -153,10 +149,10 @@
 
         <br>
         
-        <h2 class="text-2xl md:text-3xl mb-4 mt-12 font-medium">Groote</h2>
-        <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl md:text-3xl mb-4 mt-12 font-medium groote-font">Groote</h2>
+        <div class="flex justify-between items-center mb-4">
           <p class="text-copy my-0">Elegant serif typeface with classical proportions.</p>
-          <a href="/fonts/Groote-Regular.otf" download class="download-link">Download OTF</a>
+          <a href="/fonts/Groote-Regular.otf" download class="download-link">download</a>
         </div>
         <div class="text-copy groote-font mb-8">
           <div class="font-preview-text">
@@ -166,10 +162,10 @@
           </div>
         </div>
 
-        <h2 class="text-2xl md:text-3xl mb-4 mt-12 font-medium">Athemi</h2>
-        <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl md:text-3xl mb-4 mt-12 font-medium athemi-font">Athemi</h2>
+        <div class="flex justify-between items-center mb-4">
           <p class="text-copy my-0">Modern display font with strong geometric forms.</p>
-          <a href="/fonts/Athemi.otf" download class="download-link">Download OTF</a>
+          <a href="/fonts/Athemi.otf" download class="download-link">download</a>
         </div>
         <div class="text-copy athemi-font mb-8">
           <div class="font-preview-text">
@@ -179,10 +175,10 @@
           </div>
         </div>
 
-        <h2 class="text-2xl md:text-3xl mb-4 mt-12 font-medium">Cawad</h2>
-        <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl md:text-3xl mb-4 mt-12 font-medium cawad-font">Cawad</h2>
+        <div class="flex justify-between items-center mb-4">
           <p class="text-copy my-0">Clean sans-serif with excellent readability.</p>
-          <a href="/fonts/CawadRegular.ttf" download class="download-link">Download TTF</a>
+          <a href="/fonts/CawadRegular.ttf" download class="download-link">download</a>
         </div>
         <div class="text-copy cawad-font mb-8">
           <div class="font-preview-text">
@@ -192,10 +188,10 @@
           </div>
         </div>
 
-        <h2 class="text-2xl md:text-3xl mb-4 mt-12 font-medium">Zetan</h2>
-        <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl md:text-3xl mb-4 mt-12 font-medium zetan-font">Zetan</h2>
+        <div class="flex justify-between items-center mb-4">
           <p class="text-copy my-0">Bold display typeface perfect for headlines.</p>
-          <a href="/fonts/Zetan.ttf" download class="download-link">Download TTF</a>
+          <a href="/fonts/Zetan.ttf" download class="download-link">download</a>
         </div>
         <div class="text-copy zetan-font mb-8">
           <div class="font-preview-text">
@@ -216,8 +212,12 @@
       <nav class="mt-12 md:mt-0 w-full md:w-1/4">
         <ul class="space-y-2 md:text-right">
           <li class="p-0">
-            <a class="text-copy" href="/">← back to home</a>
-          </li>  
+            <a class="text-copy" href="#">fonts</a>
+          </li>
+          
+          <li class="p-0">
+            <a href="/" class="text-nav hover:text-nav-hover">about page</a>
+          </li>
           
           <li class="p-0">
             <a href="https://instagram.com/subashbaniyaa" target="_blank" rel="noopener noreferrer" class="text-nav hover:text-nav-hover inline-flex items-center gap-1">follow <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true">
