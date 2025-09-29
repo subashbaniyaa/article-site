@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Font Collection - Subash</title>
+    <meta name="description" content="Font collection showcase and downloads" />
+    <meta name="author" content="Subash Baniya" />
+    <link rel="icon" href="/_next/static/ico/favicon.ico" type="image/png" />
+    
+    <style>
+        @font-face {
+            font-family: 'Groote';
+            src: url('/fonts/Groote-Regular.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Athemi';
+            src: url('/fonts/Athemi.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Cawad';
+            src: url('/fonts/CawadRegular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Zetan';
+            src: url('/fonts/Zetan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        body {
+            margin: 0;
+            padding: 2rem;
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 2rem;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin: 0 0 0.5rem 0;
+            font-weight: 600;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+        
+        .nav-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .nav-link:hover {
+            color: #333;
+        }
+        
+        .font-grid {
+            display: grid;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .font-card {
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 2rem;
+            background: #fafafa;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .font-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .font-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 1rem;
+        }
+        
+        .font-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #222;
+            margin: 0;
+        }
+        
+        .download-btn {
+            background: #333;
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background 0.2s ease;
+        }
+        
+        .download-btn:hover {
+            background: #555;
+        }
+        
+        .font-preview {
+            margin-bottom: 1.5rem;
+        }
+        
+        .sample-text {
+            margin-bottom: 1rem;
+        }
+        
+        .groote-preview {
+            font-family: 'Groote', serif;
+        }
+        
+        .athemi-preview {
+            font-family: 'Athemi', sans-serif;
+        }
+        
+        .cawad-preview {
+            font-family: 'Cawad', sans-serif;
+        }
+        
+        .zetan-preview {
+            font-family: 'Zetan', sans-serif;
+        }
+        
+        .large-text {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: #222;
+        }
+        
+        .medium-text {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: #444;
+        }
+        
+        .small-text {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .font-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .detail-item {
+            text-align: center;
+        }
+        
+        .detail-label {
+            font-size: 0.75rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.25rem;
+        }
+        
+        .detail-value {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .large-text {
+                font-size: 1.8rem;
+            }
+            
+            .font-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Font Collection</h1>
+        <p>A curated collection of typography for creative projects</p>
+        <a href="/" class="nav-link">← Back to home</a>
+    </div>
+    
+    <div class="font-grid">
+        <!-- Groote Font -->
+        <div class="font-card">
+            <div class="font-header">
+                <h2 class="font-name">Groote</h2>
+                <a href="/fonts/Groote-Regular.otf" download class="download-btn">Download OTF</a>
+            </div>
+            <div class="font-preview groote-preview">
+                <div class="sample-text">
+                    <div class="large-text">The quick brown fox</div>
+                    <div class="medium-text">jumps over the lazy dog</div>
+                    <div class="small-text">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789 !@#$%^&*()</div>
+                </div>
+            </div>
+            <div class="font-details">
+                <div class="detail-item">
+                    <div class="detail-label">Format</div>
+                    <div class="detail-value">OTF</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Style</div>
+                    <div class="detail-value">Regular</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Type</div>
+                    <div class="detail-value">Serif</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Athemi Font -->
+        <div class="font-card">
+            <div class="font-header">
+                <h2 class="font-name">Athemi</h2>
+                <a href="/fonts/Athemi.otf" download class="download-btn">Download OTF</a>
+            </div>
+            <div class="font-preview athemi-preview">
+                <div class="sample-text">
+                    <div class="large-text">The quick brown fox</div>
+                    <div class="medium-text">jumps over the lazy dog</div>
+                    <div class="small-text">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789 !@#$%^&*()</div>
+                </div>
+            </div>
+            <div class="font-details">
+                <div class="detail-item">
+                    <div class="detail-label">Format</div>
+                    <div class="detail-value">OTF</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Style</div>
+                    <div class="detail-value">Regular</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Type</div>
+                    <div class="detail-value">Sans-serif</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Cawad Font -->
+        <div class="font-card">
+            <div class="font-header">
+                <h2 class="font-name">Cawad</h2>
+                <a href="/fonts/CawadRegular.ttf" download class="download-btn">Download TTF</a>
+            </div>
+            <div class="font-preview cawad-preview">
+                <div class="sample-text">
+                    <div class="large-text">The quick brown fox</div>
+                    <div class="medium-text">jumps over the lazy dog</div>
+                    <div class="small-text">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789 !@#$%^&*()</div>
+                </div>
+            </div>
+            <div class="font-details">
+                <div class="detail-item">
+                    <div class="detail-label">Format</div>
+                    <div class="detail-value">TTF</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Style</div>
+                    <div class="detail-value">Regular</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Type</div>
+                    <div class="detail-value">Sans-serif</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Zetan Font -->
+        <div class="font-card">
+            <div class="font-header">
+                <h2 class="font-name">Zetan</h2>
+                <a href="/fonts/Zetan.ttf" download class="download-btn">Download TTF</a>
+            </div>
+            <div class="font-preview zetan-preview">
+                <div class="sample-text">
+                    <div class="large-text">The quick brown fox</div>
+                    <div class="medium-text">jumps over the lazy dog</div>
+                    <div class="small-text">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789 !@#$%^&*()</div>
+                </div>
+            </div>
+            <div class="font-details">
+                <div class="detail-item">
+                    <div class="detail-label">Format</div>
+                    <div class="detail-value">TTF</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Style</div>
+                    <div class="detail-value">Regular</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Type</div>
+                    <div class="detail-value">Display</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
