@@ -17,9 +17,11 @@ class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
         parsed_path = urlparse(self.path)
         file_path = parsed_path.path.lstrip('/')
         
-        # If no file specified, serve index.html
+        # Route handling
         if not file_path or file_path == '/':
             file_path = 'index.html'
+        elif file_path == 'fonts' or file_path == 'fonts/':
+            file_path = 'fonts.html'
         
         # Check if the requested file exists
         if os.path.exists(file_path) and os.path.isfile(file_path):
