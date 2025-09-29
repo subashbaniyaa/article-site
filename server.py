@@ -18,16 +18,16 @@ class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
         file_path = parsed_path.path.lstrip('/')
         
         # Custom route handling - handle these before normal file serving
-        if not file_path or file_path == '/':
-            file_path = 'index.html'
-        elif file_path == 'fonts' or file_path == 'fonts/':
+        if not file_path or file_path == '/public':
+            file_path = '/public/index.html'
+        elif file_path == '/public/fonts' or file_path == 'fonts/':
             # Serve fonts.html instead of directory listing
             self.send_response(200)
             self.send_header('Content-type', 'text/html')
             self.end_headers()
             
             try:
-                with open('fonts.html', 'rb') as f:
+                with open('/public/fonts.html', 'rb') as f:
                     self.wfile.write(f.read())
             except FileNotFoundError:
                 self.wfile.write(b'<html><body><h1>Fonts page not found</h1></body></html>')
