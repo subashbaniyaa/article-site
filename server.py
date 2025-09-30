@@ -45,6 +45,7 @@ class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
 if __name__ == '__main__':
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
     
+    socketserver.TCPServer.allow_reuse_address = True
     with socketserver.TCPServer((HOST, PORT), CustomHTTPRequestHandler) as httpd:
         print(f"Server running at http://{HOST}:{PORT}/")
         print(f"Serving static files from: {os.getcwd()}")
