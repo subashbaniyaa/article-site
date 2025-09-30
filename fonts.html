@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="preload" href="/assets/fonts/6c7a36e773846397-s.p.woff2" as="font" crossorigin type="font/woff2">
+    <link rel="preload" href="/assets/fonts/8936b6d02fa555ef-s.p.woff2" as="font" crossorigin type="font/woff2">
+    <link rel="preload" href="/assets/fonts/b11c0a0df6cb7c16-s.p.woff2" as="font" crossorigin type="font/woff2">
+    
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    
+    <style>
+      @font-face {
+        font-family: 'Groote';
+        src: url('/public/fonts/Groote-Regular.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      .groote-font {
+        font-family: 'Groote', sans-serif;
+      }
+      
+      @font-face {
+        font-family: 'Athemi';
+        src: url('/public/fonts/Athemi.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      .athemi-font {
+        font-family: 'Athemi', sans-serif;
+      }
+      
+      @font-face {
+        font-family: 'Cawad';
+        src: url('/public/fonts/CawadRegular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      .cawad-font {
+        font-family: 'Cawad', sans-serif;
+      }
+      
+      @font-face {
+        font-family: 'Zetan';
+        src: url('/public/fonts/Zetan.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      .zetan-font {
+        font-family: 'Zetan', sans-serif;
+      }
+      
+      @font-face {
+        font-family: 'Antesa';
+        src: url('/public/fonts/antesa.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      .antesa-font {
+        font-family: 'Antesa', sans-serif;
+      }
+      
+      @font-face {
+        font-family: 'Chiffone';
+        src: url('/public/fonts/Chiffone.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      .chiffone-font {
+        font-family: 'Chiffone', sans-serif;
+      }
+      
+      @font-face {
+        font-family: 'Evoxsy';
+        src: url('/public/fonts/Evoxsy.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      .evoxsy-font {
+        font-family: 'Evoxsy', sans-serif;
+      }
+      
+      @font-face {
+        font-family: 'Megivia';
+        src: url('/public/fonts/megivia-regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      .megivia-font {
+        font-family: 'Megivia', sans-serif;
+      }
+      
+      @font-face {
+        font-family: 'Modeline';
+        src: url('/public/fonts/Modeline.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      .modeline-font {
+        font-family: 'Modeline', sans-serif;
+      }
+      
+      @font-face {
+        font-family: 'Nativera';
+        src: url('/public/fonts/nativera-bold.ttf') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      .nativera-font {
+        font-family: 'Nativera', sans-serif;
+      }
+      
+      @font-face {
+        font-family: 'Stanley';
+        src: url('/public/fonts/Stanley.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      .stanley-font {
+        font-family: 'Stanley', sans-serif;
+      }
+      
+      @font-face {
+        font-family: 'Thoge';
+        src: url('/public/fonts/thoge.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      
+      .thoge-font {
+        font-family: 'Thoge', sans-serif;
+      }
+      
+      .download-link {
+        color: var(--text-nav);
+        text-decoration: underline;
+        font-size: 0.875rem;
+        font-weight: normal;
+        transition: color 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+      }
+      
+      .download-link:hover {
+        color: var(--text-nav-hover);
+      }
+      
+      .font-section {
+        border-bottom: 1px solid var(--border, #e5e5e5);
+        padding-bottom: 3rem;
+        margin-bottom: 3rem;
+      }
+      
+      .font-section:last-of-type {
+        border-bottom: none;
+        margin-bottom: 2rem;
+      }
+      
+      .font-preview-text {
+        margin-bottom: 1rem;
+      }
+      
+      .font-preview-large {
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 0.75rem;
+      }
+      
+      .font-preview-medium {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      .font-preview-small {
+        font-size: 0.875rem;
+        line-height: 1.4;
+        opacity: 0.8;
+      }
+      
+      @media (min-width: 48rem) {
+        .font-preview-large {
+          font-size: 2.5rem;
+        }
+        
+        .font-preview-medium {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+    
+    <title>Fonts</title>
+    <meta name="description" content="Font collection showcase and downloads" />
+    <meta name="author" content="Subash Baniya" />
+    <meta property="og:title" content="Font Collection - Subash" />
+    <meta property="og:description" content="Font collection showcase and downloads" />
+    <link rel="canonical" href="https://subash-article.vercel.app/fonts">
+    <meta property="og:image" content="https://subash-article.vercel.app/metagraph-img.jpg" />
+    <meta property="og:url" content="https://subash-article.vercel.app/fonts" />
+    <link rel="icon" href="/assets/icons/favicon.ico" type="image/png" />
+  </head>
+  <body class="antialiased">
+    <script>
+      // Theme switcher script
+      (function() {
+        const htmlEl = document.documentElement;
+        const storageKey = 'theme';
+        const defaultTheme = 'system';
+        
+        function setTheme(theme) {
+          if (theme === 'system') {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            theme = prefersDark ? 'dark' : 'light';
+          }
+          
+          htmlEl.classList.remove('light', 'dark');
+          htmlEl.classList.add(theme);
+          htmlEl.style.colorScheme = theme;
+        }
+        
+        try {
+          const savedTheme = localStorage.getItem(storageKey) || defaultTheme;
+          setTheme(savedTheme);
+        } catch (e) {}
+        
+        // Listen for system theme changes
+        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        const handleChange = () => {
+          try {
+            const savedTheme = localStorage.getItem(storageKey) || defaultTheme;
+            if (savedTheme === 'system') {
+              setTheme('system');
+            }
+          } catch (e) {}
+        };
+        
+        if (mediaQuery.addEventListener) {
+          mediaQuery.addEventListener('change', handleChange);
+        }
+      })();
+    </script>
+
+    <div class="flex flex-col md:flex-row justify-between relative">
+      <main class="w-full md:w-3/4 pr-0 md:pr-12">
+        <h1 class="text-4xl md:text-5xl mb-1 font-medium leading-13 groote-font">font collection</h1>
+        <p class="text-copy my-2">A curated collection of fonts that feels like logo.</p>
+
+        <br>
+        
+        <div class="font-section">
+          <h2 class="text-6xl md:text-7xl mb-8 mt-12 font-bold groote-font" style="font-size: clamp(3rem, 6vw, 6rem); line-height: 1.1;">groote</h2>
+          <a href="/public/fonts/Groote-Regular.otf" download class="download-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7,10 12,15 17,10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            download font
+          </a>
+        </div>
+
+        <div class="font-section">
+          <h2 class="text-8xl md:text-9xl mb-8 mt-12 font-bold athemi-font" style="font-size: clamp(4rem, 8vw, 8rem); line-height: 1.1;">ATHEMI<br>athemi</h2>
+          <a href="/public/fonts/Athemi.otf" download class="download-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7,10 12,15 17,10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            download font
+          </a>
+        </div>
+
+        <div class="font-section">
+          <h2 class="text-8xl md:text-9xl mb-8 mt-12 font-bold cawad-font" style="font-size: clamp(4rem, 8vw, 8rem); line-height: 1.1;">cawad</h2>
+          <a href="/public/fonts/CawadRegular.ttf" download class="download-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7,10 12,15 17,10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            download font
+          </a>
+        </div>
+
+        <div class="font-section">
+          <h2 class="text-8xl md:text-9xl mb-8 mt-12 font-bold zetan-font" style="font-size: clamp(4rem, 8vw, 8rem); line-height: 1.1;">ZETAN<br>zetan</h2>
+          <a href="/public/fonts/Zetan.ttf" download class="download-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7,10 12,15 17,10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            download font
+          </a>
+        </div>
+
+        <div class="font-section">
+          <h2 class="text-6xl md:text-7xl mb-8 mt-12 font-bold antesa-font" style="font-size: clamp(3rem, 6vw, 6rem); line-height: 1.1;">ANTESA<br>antesa</h2>
+          <a href="/public/fonts/antesa.ttf" download class="download-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7,10 12,15 17,10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            download font
+          </a>
+        </div>
+
+        <div class="font-section">
+          <h2 class="text-6xl md:text-7xl mb-8 mt-12 font-bold chiffone-font" style="font-size: clamp(3rem, 6vw, 6rem); line-height: 1.1;">CHIFFONE<br>chiffone</h2>
+          <a href="/public/fonts/Chiffone.ttf" download class="download-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7,10 12,15 17,10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            download font
+          </a>
+        </div>
+
+        <div class="font-section">
+          <h2 class="text-6xl md:text-7xl mb-8 mt-12 font-bold evoxsy-font" style="font-size: clamp(3rem, 6vw, 6rem); line-height: 1.1;">EVOXSY<br>evoxsy</h2>
+          <a href="/public/fonts/Evoxsy.otf" download class="download-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7,10 12,15 17,10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            download font
+          </a>
+        </div>
+
+        <div class="font-section">
+          <h2 class="text-6xl md:text-7xl mb-8 mt-12 font-bold megivia-font" style="font-size: clamp(3rem, 6vw, 6rem); line-height: 1.1;">MEGIVIA<br>megivia</h2>
+          <a href="/public/fonts/megivia-regular.ttf" download class="download-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7,10 12,15 17,10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            download font
+          </a>
+        </div>
+
+        <div class="font-section">
+          <h2 class="text-6xl md:text-7xl mb-8 mt-12 font-bold modeline-font" style="font-size: clamp(3rem, 6vw, 6rem); line-height: 1.1;">MODELINE<br>modeline</h2>
+          <a href="/public/fonts/Modeline.otf" download class="download-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7,10 12,15 17,10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            download font
+          </a>
+        </div>
+
+        <div class="font-section">
+          <h2 class="text-6xl md:text-7xl mb-8 mt-12 font-bold nativera-font" style="font-size: clamp(3rem, 6vw, 6rem); line-height: 1.1;">NATIVERA<br>nativera</h2>
+          <a href="/public/fonts/nativera-bold.ttf" download class="download-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7,10 12,15 17,10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            download font
+          </a>
+        </div>
+
+        <div class="font-section">
+          <h2 class="text-6xl md:text-7xl mb-8 mt-12 font-bold stanley-font" style="font-size: clamp(3rem, 6vw, 6rem); line-height: 1.1;">STANLEY<br>stanley</h2>
+          <a href="/public/fonts/Stanley.otf" download class="download-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7,10 12,15 17,10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            download font
+          </a>
+        </div>
+
+        <div class="font-section">
+          <h2 class="text-8xl md:text-9xl mb-8 mt-12 font-bold thoge-font" style="font-size: clamp(4rem, 8vw, 8rem); line-height: 1.1;">T H O G E<br>t h o g e</h2>
+          <a href="/public/fonts/thoge.ttf" download class="download-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7,10 12,15 17,10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            download font
+          </a>
+        </div>
+        
+        <h2 class="text-2xl md:text-3xl mb-4 mt-12 font-medium">Usage</h2>
+        <p class="text-copy my-5">
+          Download the font files and install them on your system to start using them in your favorite design tools.
+        </p>
+      </main>
+
+      <br>
+      
+      <nav class="mt-12 md:mt-0 w-full md:w-1/4">
+        <ul class="space-y-2 md:text-right">
+          <li class="p-0">
+            <a class="text-copy" href="/fonts.html">fonts page</a>
+          </li>
+          
+          <li class="p-0">
+            <a href="/" class="text-nav hover:text-nav-hover">about page</a>
+          </li>
+          
+          <li class="p-0">
+            <a href="https://instagram.com/subashbaniyaa" target="_blank" rel="noopener noreferrer" class="text-nav hover:text-nav-hover inline-flex items-center gap-1">follow <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true">
+                <path d="M7 7h10v10"></path>
+                <path d="M7 17 17 7"></path>
+              </svg>
+            </a>
+          </li>
+          
+          <li class="p-0">
+            <a href="https://github.com/subashbaniyaa" target="_blank" rel="noopener noreferrer" class="text-nav hover:text-nav-hover inline-flex items-center gap-1">code <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true">
+                <path d="M7 7h10v10"></path>
+                <path d="M7 17 17 7"></path>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>   
+  </body>
+</html>
