@@ -18,22 +18,22 @@ class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
         parsed_path = urlparse(self.path)
         path = parsed_path.path
         
-        if path == '/fonts':
-            self.path = '/public/fonts.html'
-        elif path == '/' or path == '/index.html':
+        # Handle root path
+        if path == '/' or path == '/index.html':
             self.path = '/index.html'
-        elif path.startswith('/_next/'):
+        # Handle fonts page
+        elif path == '/fonts' or path == '/fonts/':
+            self.path = '/fonts.html'
+        # Handle assets (CSS, fonts, icons)
+        elif path.startswith('/assets/'):
             self.path = path
+        # Handle public fonts
         elif path.startswith('/public/'):
             self.path = path
-        elif path.startswith('/fonts/'):
-            self.path = '/public' + path
-        elif path == '/404.html':
-            self.path = '/404.html'
+        # Handle metagraph image
         elif path == '/metagraph-img.jpg':
             self.path = '/metagraph-img.jpg'
-        elif path == '/next.config.js':
-            self.path = '/next.config.js'
+        # Handle other files
         else:
             if os.path.exists('.' + path) and os.path.isfile('.' + path):
                 self.path = path
